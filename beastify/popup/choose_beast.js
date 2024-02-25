@@ -78,6 +78,7 @@ function listenForClicks() {
 		}
 
 		if (e.target.type === "reset") {
+			//If the click was on a button with type="reset", then we call reset().
 			browser.tabs.query({
 					active: true,
 					currentWindow: true
@@ -85,6 +86,7 @@ function listenForClicks() {
 				.then(reset)
 				.catch(reportError);
 		} else {
+			//If the click was on any other button (i.e. the beast buttons), then we call beastify().
 			browser.tabs.query({
 					active: true,
 					currentWindow: true
